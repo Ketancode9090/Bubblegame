@@ -1,4 +1,4 @@
-let timer = 6;
+let timer = 60;
 let score = 0;
 let randomhit = 0;
 
@@ -33,7 +33,7 @@ function runTimer() {
       document.querySelector("#timer").textContent = timer;
     } else {
       clearInterval(timerint);
-      document.querySelector(".pbottom").innerText = "Game Over"
+      document.querySelector(".pbottom").innerHTML = `<p>Game Over</p> <b> Your Score is ${score} `
     }
   }, 1000);
 }
@@ -44,9 +44,30 @@ document.querySelector(".pbottom").addEventListener("click", (det) => {
     let clickednum = Number(det.target.innerText)
     console.log(clickednum)
     if(clickednum === randomhit){
-        console.log("same same")
         increaseScore();
         getNewHit();
         makebubble();
     }
 })
+
+
+function resetGame(){
+  document.querySelector("#reset").addEventListener("click",() =>{
+    score = 0
+    document.querySelector("#score").textContent = score;
+    timer = 61
+    makebubble();
+    getNewHit();
+  })
+}
+
+resetGame()
+
+function passHit(){
+  document.querySelector("#pass").addEventListener("click", () =>{
+    getNewHit();
+
+  })
+}
+
+passHit()
