@@ -55,9 +55,11 @@ function resetGame(){
   document.querySelector("#reset").addEventListener("click",() =>{
     score = 0
     document.querySelector("#score").textContent = score;
-    timer = 61
+    timer = 60
+    runTimer();
     makebubble();
     getNewHit();
+
   })
 }
 
@@ -66,7 +68,7 @@ resetGame()
 function passHit(){
   document.querySelector("#pass").addEventListener("click", () =>{
     getNewHit();
-
+    
   })
 }
 
