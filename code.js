@@ -6,7 +6,7 @@ function makebubble() {
     var clutter = "";
     for (i = 2; i < 2000; i++) {
       clutter += ` <div class="bubble">
-                      ${Math.floor(Math.random() * i)}
+                      ${Math.floor(Math.random() * 100)}
                   </div>`;
     }
   
@@ -21,7 +21,7 @@ function increaseScore() {
 }
 
 function getNewHit() {
-  randomhit = Math.floor(Math.random() * 10);
+  randomhit = Math.floor(Math.random() * 100);
   document.querySelector("#hit").textContent = randomhit;
 }
 getNewHit();
